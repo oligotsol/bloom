@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#161222" />
+    <meta name="description" content="BLOOM — a soft neon merge garden. Aim, drop, bloom." />
+    <title>BLOOM</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app" data-state="title">
+      <canvas id="game"></canvas>
+
+      <header id="hud" aria-hidden="true">
+        <div class="stat left">
+          <span class="label">score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat right">
+          <span class="label">best</span>
+          <span id="best">0</span>
+        </div>
+      </header>
+
+      <p id="hint">Move · Drop</p>
+
+      <section id="title" class="screen">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 72 72" class="logo">
+            <defs>
+              <linearGradient id="bloomGrad" x1="8" y1="6" x2="64" y2="66">
+                <stop offset="0" stop-color="#7ef0c8" />
+                <stop offset="0.45" stop-color="#c4a6ff" />
+                <stop offset="1" stop-color="#ff6ec7" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="36" cy="14" rx="9" ry="12" fill="#ff6ec7" opacity="0.85" />
+            <ellipse cx="36" cy="58" rx="9" ry="12" fill="#7ef0c8" opacity="0.85" />
+            <ellipse cx="14" cy="36" rx="12" ry="9" fill="#ffe08a" opacity="0.8" />
+            <ellipse cx="58" cy="36" rx="12" ry="9" fill="#ff8b74" opacity="0.8" />
+            <rect x="16" y="16" width="40" height="40" rx="14" fill="url(#bloomGrad)" />
+            <rect x="22" y="21" width="16" height="10" rx="5" fill="#fff" opacity="0.45" />
+          </svg>
+        </div>
+        <h1 class="wordmark" aria-label="BLOOM">
+          <span>B</span><span>L</span><span>O</span><span>O</span><span>M</span>
+        </h1>
+        <p class="tag">grow something sweet</p>
+        <button id="play" type="button">play</button>
+      </section>
+
+      <section id="over" class="screen hidden">
+        <p class="kicker">the garden overflowed</p>
+        <h2 class="wordmark small">WILTED</h2>
+        <p class="final"><span id="final-score">0</span></p>
+        <p id="new-best" class="new-best hidden">new best</p>
+        <button id="again" type="button">again</button>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
