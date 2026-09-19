@@ -155,19 +155,20 @@ function drawGhost(ctx: CanvasRenderingContext2D, game: Game, x: number, y: numb
 }
 
 function drawNext(ctx: CanvasRenderingContext2D, game: Game, x: number, y: number, cell: number): void {
+  const side = game.aimX < COLS - 1.15 ? 0.82 : -0.82;
   const dummy: Piece = {
     id: -1,
-    col: COLS - 0.18,
-    row: -0.72,
+    col: game.aimX + side,
+    row: -1.28,
     color: game.nextColor,
     tier: game.nextTier,
-    y: -0.72,
+    y: -1.28,
     squash: 0,
-    grow: 0.62,
+    grow: 0.42,
     pulse: 0,
   };
   ctx.save();
-  ctx.globalAlpha = 0.5;
+  ctx.globalAlpha = 0.42;
   drawCandy(ctx, dummy, x, y, cell, true);
   ctx.restore();
 }
@@ -217,7 +218,7 @@ function drawCandy(
 
   if (!ghost) {
     ctx.shadowColor = pal.glow;
-    ctx.shadowBlur = 16 + p.tier * 7 + p.pulse * 18;
+    ctx.shadowBlur = 22 + p.tier * 10 + p.pulse * 18;
   }
 
   const grd = ctx.createLinearGradient(-w / 2, -h / 2, w / 2, h / 2);

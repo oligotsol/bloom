@@ -65,10 +65,10 @@ canvas {
 }
 
 .label {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 12px;
+  letter-spacing: 0.18em;
   text-transform: lowercase;
-  color: var(--mute);
+  color: rgba(246, 238, 248, 0.62);
 }
 
 #score,
@@ -119,6 +119,10 @@ canvas {
   background: radial-gradient(circle at 50% 42%, rgba(22, 18, 34, 0.2), rgba(12, 10, 18, 0.28));
 }
 
+#over {
+  background: radial-gradient(circle at 50% 42%, rgba(16, 12, 26, 0.58), rgba(8, 6, 14, 0.8));
+}
+
 .mark {
   width: 88px;
   height: 88px;
@@ -163,6 +167,9 @@ canvas {
 }
 .wordmark span:nth-child(5) {
   animation-delay: 0.32s;
+}
+.wordmark span:nth-child(6) {
+  animation-delay: 0.4s;
 }
 
 .wordmark.small {

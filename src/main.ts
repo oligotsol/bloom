@@ -18,6 +18,7 @@ const againBtn = document.querySelector<HTMLButtonElement>("#again")!;
 
 const game = new Game();
 bestEl.textContent = String(game.best);
+(window as unknown as { __bloom: Game }).__bloom = game;
 
 let width = 0;
 let height = 0;

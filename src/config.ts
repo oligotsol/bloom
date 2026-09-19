@@ -15,7 +15,7 @@ export const COLORS = [
 
 export const PINK = { fill: "#ff6ec7", deep: "#d4459a", glow: "#ffb3e4" };
 
-export const TIER_SIZE = [0.7, 0.8, 0.88, 0.95];
+export const TIER_SIZE = [0.8, 0.88, 0.94, 0.99];
 export const TIER_SCORE = [40, 110, 280, 720];
 export const CLEAR_BONUS = 2400;
 

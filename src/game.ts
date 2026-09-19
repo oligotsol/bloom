@@ -70,6 +70,7 @@ export class Game {
   private bag: number[] = [];
   private layout = { x: 0, y: 0, cell: 48, w: 0, h: 0 };
   private demoWait = 0.4;
+  time = 0;
 
   constructor() {
     this.best = Number(localStorage.getItem(STORAGE_BEST) || 0) || 0;
@@ -233,11 +234,13 @@ export class Game {
   }
 
   update(dt: number): void {
+    this.time += dt;
     if (this.screen === "title") this.tickDemo(dt);
     this.aimX += (this.aimCol - this.aimX) * Math.min(1, dt * 14);
-    if (this.current && this.anim.kind === "idle" && this.screen === "play") {
+    if (this.current && this.anim.kind === "idle") {
       this.current.col = Math.round(this.aimX);
-      this.current.y += (-1.12 - this.current.y) * Math.min(1, dt * 10);
+      const bob = Math.sin(this.time * 3.2) * 0.05;
+      this.current.y += (-1.08 + bob - this.current.y) * Math.min(1, dt * 10);
       this.current.squash *= Math.pow(0.02, dt);
     }
 
